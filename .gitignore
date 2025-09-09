@@ -1,0 +1,4 @@
+# Node.js dependencies from all directories
+node_modules/
+*/node_modules/
+**/node_modules/
