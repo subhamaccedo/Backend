@@ -18,17 +18,40 @@
         >
       </div>
       <!-- User Info -->
-      <div class="bg-white rounded-xl shadow-md p-6 mb-6">
-              <div class="flex items-start gap-3">
-        <div class="w-20 h-20 rounded-full overflow-hidden">
-          <img src="/images/uploads/<%= user.profilepic %>" alt="Profile" class="w-full h-full object-cover" />
-        </div>
-      </div>
-        <h2 class="text-2xl font-semibold text-gray-700 mb-2">
-          Hello, <span class="text-blue-600"><%= user.name %></span>
-        </h2>
-        <p class="text-gray-500">You can create a new post below 👇</p>
-      </div>
+       
+<div class="bg-white shadow-md p-6 mb-6">
+  <div class="flex items-center gap-4">
+    <!-- Profile Image -->
+    <div class="w-20 h-20 rounded-full overflow-hidden">
+      <img src="/images/uploads/<%= user.profilepic %>" alt="Profile" class="w-full h-full object-cover" />
+    </div>
+    <div class="">
+      <form action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+      <input 
+        type="file" 
+        name="image" 
+        class="w-20 border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+      />
+      <button 
+        type="submit"
+        class="w-auto text-[10px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md transition"
+      >
+        Upload File
+      </button>
+    </form>
+    </div>
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">
+        Hello, <span class="text-blue-600"><%= user.name %></span>
+      </h2>
+      <p class="text-gray-500">You can create a new post below 👇</p>
+    </div>
+  </div>
+</div>
+
 
       <!-- Create Post -->
       <form
